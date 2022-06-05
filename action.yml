@@ -1,5 +1,8 @@
 name: 'Publish Changelog'
 description: 'Publish the latest changelog from CHANGELOG.md via webhook (e.g. discord).'
+branding:
+  icon: send
+  color: blue
 inputs:
   webhook-url:
     description: 'The webhook url that to be called'
