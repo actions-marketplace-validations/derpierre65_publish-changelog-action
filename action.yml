@@ -1,13 +1,13 @@
 name: 'Publish Changelog'
 description: 'Publish the latest changelog from CHANGELOG.md via webhook (e.g. discord).'
 inputs:
+  webhook-url:
+    description: 'The webhook url that to be called'
+    required: true
   changelog:
-    description: 'Changelog file'
+    description: 'File location for the CHANGELOG.md file'
     required: false
     default: './CHANGELOG.md'
-  webhook-url:
-    description: 'webhook Url'
-    required: true
   format-date:
     description: 'Format for a date.'
     required: false
@@ -17,7 +17,7 @@ inputs:
     required: false
     default: '**{{version}} - {{date}}**'
   format-type:
-    description: 'Format for the type of change (added/changed, ...)'
+    description: 'Format for the type of change (added, changed, fixed, ...)'
     required: false
     default: '*{{type}}*'
   format-change:
