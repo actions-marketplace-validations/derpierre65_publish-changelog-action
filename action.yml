@@ -1,0 +1,29 @@
+name: 'Publish Changelog'
+description: 'Publish the latest changelog from CHANGELOG.md via webhook (e.g. discord).'
+inputs:
+  changelog:
+    description: 'Changelog file'
+    required: false
+    default: './CHANGELOG.md'
+  webhook-url:
+    description: 'webhook Url'
+    required: true
+  format-date:
+    description: 'Format for a date.'
+    required: false
+    default: 'Y-m-d'
+  format-version:
+    description: 'Format for the version line (available variables: version, date)'
+    required: false
+    default: '**{{version}} - {{date}}**'
+  format-type:
+    description: 'Format for the type of change (added/changed, ...)'
+    required: false
+    default: '*{{type}}*'
+  format-change:
+    description: 'Format for a line of change'
+    required: false
+    default: '• {{text}}'
+runs:
+  using: 'node16'
+  main: 'index.js'
